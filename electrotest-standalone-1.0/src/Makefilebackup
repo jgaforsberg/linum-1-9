@@ -1,0 +1,24 @@
+#utkast till Makefile
+CC=gcc
+
+PREFIX=/usr/bin
+
+BIN=electrotest-standalone
+
+all: electrotest-standalone
+
+electrotest-standalone: electrotest-standalone.o
+	$(CC) -o electrotest-standalone electrotest-standalone.o -lm
+
+electrotest-standalone.o: electrotest-standalone.c
+	$(CC) -c electrotest-standalone.c 
+
+clean:
+	rm -rf *.o electrotest-standalone
+
+install:
+	sudo cp $(BIN) $(BININST)
+
+uninstall:
+	sudo rm -rf $(BININST)/$(BIN)
+

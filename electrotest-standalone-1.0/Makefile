@@ -1,20 +1,20 @@
 #utkast till Makefile
 CC=gcc
 
-BININST=/usr/bin
+PREFIX=/usr/bin
 
 BIN=electrotest-standalone
 
-all: electrotest-standalone
+all: src/electrotest-standalone
 
-electrotest-standalone: electrotest-standalone.o
-	$(CC) -fpic -o $@ electrotest-standalone.o -lm
-
-electrotest-standalone.o: electrotest-standalone.c
-	$(CC) -c -fpic electrotest-standalone.c
+src/electrotest-standalone: src/electrotest-standalone.c
+	$echo "CFLAGS=$(CFLAGS)" | \
+		fold -s -w 70 | \
+		sed -e 's/^/# /'
+	$(CC) $(CFLAGS) -o $@ $^ -lm
 
 clean:
-	rm -rf *.o electrotest-standalone
+	rm -f src/electrotest-standalone
 
 install:
 	sudo cp $(BIN) $(BININST)

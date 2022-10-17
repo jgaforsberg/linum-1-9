@@ -3,6 +3,6 @@ Version: 1.0
 Architecture: all
 Essential: no
 Priority: optional
-Depends: packages;electrotest-standalone;needs;to;run
+Depends: 
 Maintainer: Gustav Forsberg gufo0047 <jgaforsberg@gmail.com>
 Description: Standaloneversion av electrotest paketerad till debian-paket enligt LinUM1 uppgift 9
