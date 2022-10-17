@@ -5,6 +5,8 @@ Uppgift 9 - Paket för distribution
 A:
 Modifiera electrotest så all nödvändig kod hamnar i en enda .c-fil electrotest-standalone.c
 
+Skapa en enkel man-sida till electrotest
+ 
 Skapa ett deb-paket, electrotest-standalone som installerar programmet i filsystemet
 
 Avlusa paketet med lintian vid körning av debuild undantaget:
