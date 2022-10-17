@@ -1,7 +1,7 @@
 #utkast till Makefile
 CC=gcc
 
-PREFIX=/usr/bin
+PREFIX=/usr/local
 
 BIN=electrotest-standalone
 
@@ -16,9 +16,11 @@ src/electrotest-standalone: src/electrotest-standalone.c
 clean:
 	rm -f src/electrotest-standalone
 
-install:
-	sudo cp $(BIN) $(BININST)
+install: src/electrotest-standalone
+	install -D src/electrotest-standalone \
+		$(DESTDIR)$(PREFIX)/bin/electrotest-standalone
 
 uninstall:
-	sudo rm -rf $(BININST)/$(BIN)
+	rm -f $(DESTDIR)$(PREFIX)/bin/electrotest-standalone
 
+.PHONY: all install clean uninstall
