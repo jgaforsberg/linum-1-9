@@ -1,17 +1,18 @@
-Linux som utvecklingsmiljö 1
+LinUM1
 
-Uppgift 9 - Paket för distribution
+Lab 9 - Package for distribution
 
 A:
-Modifiera electrotest så all nödvändig kod hamnar i en enda .c-fil electrotest-standalone.c
+Modify electrotest to a standalone variant, i.e., electrotest-standalone.c
 
-Skapa en enkel man-sida till electrotest
+Create man-page
  
-Skapa ett deb-paket, electrotest-standalone som installerar programmet i filsystemet
+Create a deb-package to install electrotest-standalone
 
-Avlusa paketet med lintian vid körning av debuild undantaget:
+Delouse the package with lintian, excluding::
 improbable-bug-number-in-closes
 new-package-should-close-itp-bug
 
-Extrahera information ur deb-paketet med dpkg-deb samt verifiera informationen med växlarna -c och -f
+Extract information with command: dpkg-deb
+Verify information with options -c -f
 
